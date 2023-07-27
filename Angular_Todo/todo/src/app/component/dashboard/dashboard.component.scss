@@ -1,0 +1,78 @@
+.task{
+    height: fit-content;
+    display: flex;
+}
+.readcontent{
+width: 70%;
+line-break: auto;
+display: flex;
+align-items: center;
+}
+.content{
+    text-decoration: line-through;
+    width: 70%;
+    line-break: auto;
+    display: flex;
+    align-items: center;
+    }
+.edit{
+    border: solid;
+    border-color: rgb(5, 154, 240);
+    color:  rgb(5, 154, 240);;
+    border-radius: 20%;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit:hover{
+    background-color: rgb(5, 154, 240);
+    color: white;
+}
+
+.delete{
+    border: solid;
+    border-color: rgb(250, 71, 71);
+    color:rgb(175, 26, 26) ;
+    border-radius: 20%;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.delete:hover{
+    background-color: rgb(250, 71, 71);
+    color: white;
+}
+
+.modaal{
+   
+    z-index: 1000;
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalcontent{
+background-color: rgb(255, 255, 255);
+width: 400px;
+height: 100px;
+z-index: 1000;
+border-radius: 2%;
+background: white;
+display: flex;
+justify-content: center;
+align-items: center;
+}

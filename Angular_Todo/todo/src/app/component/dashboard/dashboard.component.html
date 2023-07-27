@@ -1,0 +1,45 @@
+<div class="container-fluid bg-light">
+    <div class="container bg-light">
+        <div class="row mt-4">
+
+            <div class="col-md-3" style="height: 550px;">
+            </div>
+            <div class="col-md-6 bg-white shadow">
+                <div class="card bg-warning mt-4 d-flex align-items-center justify-content-center">
+                    <h4 class="text-white mt-2 ps-3 pt-2 pb-2">To do List</h4>
+                </div>
+                <div class="mt-2 shadow">
+                    <div class="input-group mb-3 p-4">
+                        <input type="text" class="form-control" placeholder="Enter tasks" name="task" name="task" [(ngModel)]="addTaskValue">
+                        <button class="btn btn-outline-success" type="button" id="button-addon2" (click)="addTask()">+</button>
+                    </div>
+                </div>
+
+                <h4 class="text-primary mt-4">Tasks</h4>
+                    <div style="overflow-y:auto; height: 350px;">
+                    <div class="m-3" *ngFor="let task of taskArr">
+                        <div class="p-2 shadow border">
+                            <div class="task">
+                                <div  [ngClass]="{content:task.read,readcontent:!task.read}">{{task.task_name}} </div>
+                                <input style="margin-right: 10px;" [(ngModel)]="task.read" (change)="editRead(task)" type="checkbox"/>
+                                <div [id]="task.id" (click)="editCaller(task.id)" class="edit">Edit</div>
+
+                                 <div *ngIf="task.id===editValue"   class="modaal" [id]=(task.id+task.task_name)  >
+                                  <div class="modalcontent" > 
+                                    <input style="height: 40px; background-color: rgb(167, 203, 236);" type="text" value={{task.task_name}} (input)="editing($event)">
+                                    <div  (click)="editTask(task)" class="edit" style="margin-left: 5px;">OK</div>
+                                  </div>
+
+                                </div>
+                              
+                                <div (click)="deleteTask(task)" class="delete">X</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div> 
