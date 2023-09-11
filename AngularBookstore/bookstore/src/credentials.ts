@@ -1,0 +1,1 @@
+export enum Credential {email="vishnu@gmail.com",password='12345'}
